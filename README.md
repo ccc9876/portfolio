@@ -5,23 +5,24 @@
 
 
 # S/W Test
-- DAB(Digital Audio Broadcasting)
+## DAB(Digital Audio Broadcasting)
  1.단위 테스트 진행. 
  2.ETSI TS(유럽전기통신표준협회) 103 461, 검증 진행.
  
  
-- EC/NR (Echo Cancellation and Noise Reductio)
+## EC/NR (Echo Cancellation and Noise Reductio)
  1.단위 테스트 진행.
  2.새로운 S/W 개발시 검증 진행.
  3.ITUT-P.1100(국제전기통신연합) 내부 검증 진행.
  
  
-- WIFI
+ ## WIFI
  1.단위 테스트 진행.
 
 
 
 
 # Auto Test
--C 
--Python 3
+## Language
+ 1.C 
+ 2.Python 3
