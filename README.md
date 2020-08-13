@@ -8,7 +8,7 @@
 <br/>
 
 # S/W Test
-*DAB(Digital Audio Broadcasting)
+*DAB(Digital Audio Broadcasting)*
 
  1.단위 테스트 진행. 
  
@@ -18,7 +18,7 @@
 
 <br/> 
  
-*EC/NR (Echo Cancellation and Noise Reductio)
+*EC/NR (Echo Cancellation and Noise Reductio)*
 
  1.단위 테스트 진행.
  
@@ -30,7 +30,7 @@
 
 <br/>
 
-*WIFI
+*WIFI*
  
  1.단위 테스트 진행.
  
@@ -41,7 +41,7 @@
 <br/>
 
 # Auto Test
-## Language
+*Language*
  1.C 
  
  2.Python 3
