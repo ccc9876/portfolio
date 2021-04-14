@@ -9,9 +9,8 @@ import datetime
 import glob
 import math
 
-
-if os.path.isdir('C:/Users/user/Desktop/아파트 만들기'):
-    shutil.rmtree('C:/Users/user/Desktop/아파트 만들기')
+#if os.path.isdir('C:/Users/user/Desktop/주차장 만들기'):
+    #shutil.rmtree('C:/Users/user/Desktop/주차장 만들기')
 APP_DATA = ["FeatureBuilderFloorGenerateWindow","FeatureRebarMaterialWindow","FeatureBuilderStoryMaterialWindow"]
 def APP():
     '''
@@ -1307,49 +1306,440 @@ def B1F_ISOFOOT():
     pyautogui.hotkey("enter")
     time.sleep(1)
 
-APP()
-FLOOR()
-MATREIAL()
-MATERIAL_IMAGE()
-Sectionin_administar_BUTTRESS()
-Sectionin_administar_DECKSLAVE()
-Sectionin_administar_RWALL()
-Sectionin_administar_ISOFOOT()
-Sectionin_administar_WALLFOOT()
-EXCEL()
-DWGRE()
-B1F_ISOFOOT()
-
-
-gongs = pyautogui.locateAllOnScreen('E:/park_image/sun.jpg', confidence=0.85)
-gongs = list(gongs)
-gongs_len = (len(gongs))
-if gongs_len == 1 :
-    pyautogui.moveTo(pyautogui.center(gongs[0]))
+def B1F_WALLFOOT():
+    k = 0   
+    for i in range(1,30):
+        time.sleep(2)
+        k += 0.1
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/sun.jpg', confidence=0.99-k)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+            break
+    time.sleep(1)
+    pyautogui.moveTo(1302,393)
+    time.sleep(1)
+    for i in range(1,8):
+        pyautogui.scroll(1)
+    time.sleep(1)
+    pyautogui.click(1316,470)
+    time.sleep(1)
+    pyautogui.hotkey("esc")
+    time.sleep(1)
+    pyautogui.click(1335,438)
+    time.sleep(1)
+    pyautogui.click(1324,444)
+    time.sleep(1)
+    pyautogui.click(912,968)
+    time.sleep(1)
+    pyperclip.copy('li')
+    time.sleep(1)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(1)
+    pyautogui.hotkey("enter")
+    time.sleep(1)
+    pyautogui.moveTo(1302,393)
+    time.sleep(1)
+    for i in range(1,8):
+        pyautogui.scroll(-1)
+    time.sleep(1)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/isofoot_model.jpg', confidence=0.95)
+    gongs = list(gongs)
+    gongs_len = (len(gongs))
+    if gongs_len == 1 :
+        pyautogui.moveTo(pyautogui.center(gongs[0]))
+    else :
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/isofoot_model.jpg', confidence=0.95-0.01)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+    time.sleep(0.5)
+    pyautogui.move(0,30)
+    time.sleep(0.5)
     pyautogui.click()
-else :
-    gongs = pyautogui.locateAllOnScreen('E:/park_image/sun.jpg', confidence=0.80-0.01)
+    time.sleep(1)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/JOUL.jpg', confidence=0.95)
     gongs = list(gongs)
     gongs_len = (len(gongs))
     if gongs_len == 1 :
         pyautogui.moveTo(pyautogui.center(gongs[0]))
         pyautogui.click()
-time.sleep(1)
-pyautogui.moveTo(1308,399)
-time.sleep(1)
-for i in range(1,10):
-    pyautogui.scroll(1)
-time.sleep(0.5)
-gongs = pyautogui.locateAllOnScreen('E:/park_image/isofoot_model.jpg', confidence=0.85)
-gongs = list(gongs)
-gongs_len = (len(gongs))
-if gongs_len == 1 :
-    pyautogui.moveTo(pyautogui.center(gongs[0]))
-else :
-    gongs = pyautogui.locateAllOnScreen('E:/park_image/isofoot_model.jpg', confidence=0.80-0.01)
+    else :
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/JOUL.jpg', confidence=0.95-0.01)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(0.5)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/RECON.jpg', confidence=0.9)
     gongs = list(gongs)
     gongs_len = (len(gongs))
     if gongs_len == 1 :
         pyautogui.moveTo(pyautogui.center(gongs[0]))
-time.sleep(0.5)
-pyautogui.move(0,20)
+        pyautogui.click()
+    else :
+        time.sleep(1)
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/RECON.jpg', confidence=0.99)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(0.5)
+    pyautogui.doubleClick(622,154)
+    time.sleep(1)
+    #텍스트 인식거리 입력
+    pyperclip.copy('4000')
+    time.sleep(0.5)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(0.5)
+    pyautogui.hotkey("tab") 
+    time.sleep(0.5)
+    pyperclip.copy('6500')
+    time.sleep(0.3)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(0.5)
+    pyautogui.hotkey("tab") 
+    time.sleep(0.5)
+    pyperclip.copy('50')
+    time.sleep(0.3)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(1)
+    pyautogui.click(720,262)
+    time.sleep(1)
+    pyautogui.click(1472,768)
+    time.sleep(1)
+    time.sleep(0.5)
+    pyautogui.hotkey("enter")
+    time.sleep(1)
+
+def B1F_SLAB():
+    time.sleep(2)
+    k = 0
+    for i in range(1,30):
+        time.sleep(2)
+        k += 0.1
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/sun.jpg', confidence=0.99-k)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+            break
+    time.sleep(1)
+    pyautogui.moveTo(1189,418)
+    time.sleep(1)
+    for i in range(1,8):
+        pyautogui.scroll(1)
+    time.sleep(1)
+    pyautogui.hotkey("esc")
+    time.sleep(1)
+    pyautogui.click(1240,523)
+    time.sleep(1)
+    pyautogui.click(1142,542)
+    time.sleep(1)
+    pyautogui.click(912,968)
+    time.sleep(1)
+    pyperclip.copy('li')
+    time.sleep(1)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(1)
+    pyautogui.hotkey("enter")
+    time.sleep(1)
+    pyautogui.moveTo(988,296)
+    time.sleep(1)
+    for i in range(1,6):
+        pyautogui.scroll(-1)
+    time.sleep(1)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/slave_model.jpg', confidence=0.9)
+    gongs = list(gongs)
+    gongs_len = (len(gongs))
+    if gongs_len == 1 :
+        pyautogui.moveTo(pyautogui.center(gongs[0]))
+        pyautogui.click()
+    else :
+        time.sleep(1)
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/slave_model.jpg', confidence=0.99)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(1)
+    #슬라브 면적 라인선택
+    pyautogui.click(1141,83)
+    time.sleep(1)
+    pyautogui.click(430,231)
+    time.sleep(1)
+    pyautogui.click(1412,780)
+    time.sleep(1)
+    pyautogui.hotkey("enter")
+    time.sleep(3)
+    pyautogui.hotkey("esc")
+    time.sleep(1)
+    # 더미 선택
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/PARK_3D.jpg', confidence=0.9)
+    gongs = list(gongs)
+    gongs_len = (len(gongs))
+    if gongs_len == 1 :
+        pyautogui.moveTo(pyautogui.center(gongs[0]))
+        pyautogui.click()
+    else :
+        time.sleep(1)
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/PARK_3D.jpg', confidence=0.99)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(3)
+    pyautogui.click(1076,547)
+    time.sleep(1)
+    pyautogui.scroll(-1)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/camera.jpg', confidence=0.85)
+    gongs = list(gongs)
+    gongs_len = (len(gongs))
+    print(gongs_len)
+    if gongs_len == 1 :
+        pyautogui.moveTo(pyautogui.center(gongs[0]))
+        pyautogui.click()
+    else :
+        time.sleep(1)
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/camera.jpg', confidence=0.88)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        print(gongs_len)
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(1)
+    pyautogui.hotkey("esc")
+    time.sleep(1)
+    pyautogui.click(1152,524)
+    time.sleep(1)
+    pyautogui.click(1191,601)
+    time.sleep(1)
+    pyautogui.click(1302,537)
+    time.sleep(1)
+    pyautogui.click(1325,628)
+    time.sleep(1)
+    pyautogui.click(957,463)
+    time.sleep(1)
+    pyautogui.click(879,444)
+    time.sleep(1)
+    #더미 체크
+    pyautogui.click(290,891)
+    time.sleep(1)
+    pyautogui.doubleClick(274,775)
+    time.sleep(1)
+    pyautogui.click(184,799)
+    time.sleep(1)
+    pyautogui.click(1536,370)
+    time.sleep(1)
+    pyautogui.hotkey("esc")
+
+def B1F_COLUMN():
+    time.sleep(1)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/ROUND.jpg', confidence=0.9)
+    gongs = list(gongs)
+    gongs_len = (len(gongs))
+    if gongs_len == 1 :
+        pyautogui.moveTo(pyautogui.center(gongs[0]))
+        pyautogui.click()
+    else :
+        time.sleep(1)
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/ROUND.jpg', confidence=0.99)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(1)
+    k = 0
+    for i in range(1,30):
+        time.sleep(2)
+        k += 0.1
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/sun.jpg', confidence=0.99-k)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+            break
+    time.sleep(1)
+    pyautogui.moveTo(850,323)
+    time.sleep(1)
+    for i in range(1,9):
+        pyautogui.scroll(1)
+    time.sleep(1)
+    pyautogui.click(939,381)
+    time.sleep(1)
+    pyautogui.click(919,374)
+    time.sleep(1)
+    pyautogui.click(912,968)
+    time.sleep(1)
+    pyperclip.copy('li')
+    time.sleep(1)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(1)
+    pyautogui.hotkey("enter")
+    time.sleep(1)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/column_model.jpg', confidence=0.99)
+    gongs = list(gongs)
+    gongs_len = (len(gongs))
+    if gongs_len == 1 :
+        pyautogui.moveTo(pyautogui.center(gongs[0]))
+        pyautogui.click()
+    else :
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/column_model.jpg', confidence=0.98-0.01)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(1)
+    gongs = pyautogui.locateAllOnScreen('E:/park_image/RECON.jpg', confidence=0.9)
+    gongs = list(gongs)
+    gongs_len = (len(gongs))
+    if gongs_len == 1 :
+        pyautogui.moveTo(pyautogui.center(gongs[0]))
+        pyautogui.click()
+    else :
+        time.sleep(1)
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/RECON.jpg', confidence=0.99)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+    time.sleep(1)
+    time.sleep(0.5)
+    pyautogui.doubleClick(622,154)
+    time.sleep(1)
+    #텍스트 인식거리 입력
+    pyperclip.copy('2000')
+    time.sleep(0.5)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(0.5)
+    pyautogui.hotkey("tab") 
+    time.sleep(0.5)
+    pyperclip.copy('2000')
+    time.sleep(0.3)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(0.5)
+    pyautogui.hotkey("tab") 
+    time.sleep(0.5)
+    pyperclip.copy('50')
+    time.sleep(0.3)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(1)
+    pyautogui.moveTo(1121,266)
+    time.sleep(1)
+    for i in range(1,10):
+        pyautogui.scroll(-1)
+    time.sleep(1)
+    pyautogui.click(586,240)
+    time.sleep(1)
+    pyautogui.click(1606,780)
+    time.sleep(1)
+    pyautogui.hotkey("enter")
+    time.sleep(5)
+
+def B1F_WALL():
+    time.sleep(2)
+    pyautogui.click(928,307)
+    time.sleep(1)
+    pyautogui.hotkey("esc")
+    time.sleep(1)
+    k = 0
+    for i in range(1,30):
+        time.sleep(2)
+        k += 0.1
+        gongs = pyautogui.locateAllOnScreen('E:/park_image/sun.jpg', confidence=0.99-k)
+        gongs = list(gongs)
+        gongs_len = (len(gongs))
+        if gongs_len == 1 :
+            pyautogui.moveTo(pyautogui.center(gongs[0]))
+            pyautogui.click()
+            break
+    time.sleep(1)
+    pyautogui.moveTo(1022,229)
+    time.sleep(1)
+    for i in range(1,10):
+        pyautogui.scroll(1)
+    time.sleep(1)
+    pyautogui.click(975,371)
+    time.sleep(1)
+    pyautogui.click(966,349)
+    time.sleep(1)
+    pyautogui.click(912,968)
+    time.sleep(1)
+    pyperclip.copy('li')
+    time.sleep(1)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(1)
+    pyautogui.hotkey("enter")
+    time.sleep(1)
+    pyautogui.moveTo(681,303)
+    time.sleep(1)
+    for i in range(1,9):
+        pyautogui.scroll(-1)
+    time.sleep(1)
+    pyautogui.click(394,261)
+    time.sleep(1)
+    pyautogui.click(1336,772)
+    #텍스트 인식거리 입력
+    pyperclip.copy('500')
+    time.sleep(0.5)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(0.5)
+    pyautogui.hotkey("tab") 
+    time.sleep(0.5)
+    pyperclip.copy('300')
+    time.sleep(0.3)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(0.5)
+    pyautogui.hotkey("tab") 
+    time.sleep(0.5)
+    pyperclip.copy('50')
+    time.sleep(0.3)
+    pyautogui.hotkey("ctrl","v")
+    time.sleep(1)
+    pyautogui.moveTo(1121,266)
+    time.sleep(1)
+    pyautogui.click(394,261)
+    time.sleep(1)
+    pyautogui.click(1336,772)
+    time.sleep(1)
+    pyautogui.hotkey("enter")
+    time.sleep(5)
+
+
+
+
+APP()
+FLOOR()
+MATREIAL()
+MATERIAL_IMAGE()
+'''
+Sectionin_administar_BUTTRESS()
+Sectionin_administar_DECKSLAVE()
+Sectionin_administar_RWALL()
+Sectionin_administar_ISOFOOT()
+Sectionin_administar_WALLFOOT()
+'''
+EXCEL()
+DWGRE()
+B1F_ISOFOOT()
+B1F_WALLFOOT()
+B1F_SLAB()
+B1F_COLUMN()
+
+#B1F_WALL()
+
+
+
