@@ -4,8 +4,7 @@
 현재 BIM(Building Information Modeling) SW 개발 업무를 하고 있습니다.
 
 <br/>
-<br/>
-<br/>
+
 #재직 회사 : 창소프트 아이앤아이-( 2021.01 ~  )
 
 *BIM S/W 솔루션 * 
